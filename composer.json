@@ -1,0 +1,19 @@
+{
+    "name": "windwalker/pay2go",
+    "type": "windwalker-external-package",
+    "description": "The PHP Pay2Go package",
+    "keywords": ["windwalker", "pay2go", "payment"],
+    "homepage": "https://github.com/ventoviro/pay2go",
+    "license": "LGPL-2.0+",
+    "require": {
+        "php": ">=5.3.10"
+    },
+    "require-dev": {
+    },
+    "minimum-stability": "beta",
+    "autoload": {
+        "psr-4": {
+            "Windwalker\\Pay2Go\\": "src/"
+        }
+    }
+}
