@@ -13,12 +13,12 @@ use Windwalker\Pay2Go\AbstractPayment;
 /**
  * The VACC payment.
  *
- * @method  string  getBarCode_1()  getBarCode_1()
- * @method  VACC    setBarCode_1()  setBarCode_1($value)
- * @method  string  getBarCode_2()  getBarCode_2()
- * @method  VACC    setBarCode_2()  setBarCode_2($value)
- * @method  string  getBarCode_3()  getBarCode_3()
- * @method  VACC    setBarCode_3()  setBarCode_3($value)
+ * @method  string  getBarcode_1()  getBarcode_1()
+ * @method  VACC    setBarcode_1()  setBarcode_1($value)
+ * @method  string  getBarcode_2()  getBarcode_2()
+ * @method  VACC    setBarcode_2()  setBarcode_2($value)
+ * @method  string  getBarcode_3()  getBarcode_3()
+ * @method  VACC    setBarcode_3()  setBarcode_3($value)
  *
  * @since  {DEPLOY_VERSION}
  */
@@ -37,9 +37,9 @@ class Barcode extends AbstractPayment
 	 * @var  array
 	 */
 	protected $data = array(
-		'BarCode_1' => null,
-		'BarCode_2' => null,
-		'BarCode_3' => null
+		'Barcode_1' => null,
+		'Barcode_2' => null,
+		'Barcode_3' => null
 	);
 
 	/**

@@ -8,6 +8,9 @@
 
 namespace Windwalker\Pay2Go;
 
+use Windwalker\Pay2Go\Renderer\RendererHelper;
+use Windwalker\Renderer\PhpRenderer;
+
 /**
  * The Pay2GoHelper class.
  * 
@@ -152,7 +155,7 @@ abstract class Pay2GoHelper
 			return static::$languages[$category][$code];
 		}
 
-		return static::$languages[$category][$code];
+		return $code;
 	}
 
 	/**
@@ -167,6 +170,31 @@ abstract class Pay2GoHelper
 			return static::$languages;
 		}
 
-		return static::$languages = parse_ini_file(__DIR__ . '/Resources/translation.ini');
+		return static::$languages = parse_ini_file(static::getPay2GoRoot() . '/resources/languages/zh-TW.ini', true);
+	}
+
+	/**
+	 * render
+	 *
+	 * @param string $template
+	 * @param array  $data
+	 *
+	 * @return  string
+	 */
+	public static function render($template, $data = array())
+	{
+		$renderer = RendererHelper::getRenderer();
+
+		return $renderer->render($template, (object) $data);
+	}
+
+	/**
+	 * getPay2GoRoot
+	 *
+	 * @return  string
+	 */
+	public static function getPay2GoRoot()
+	{
+		return realpath(__DIR__ . '/..');
 	}
 }

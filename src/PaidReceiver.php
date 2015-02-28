@@ -114,6 +114,16 @@ class PaidReceiver extends AbstractDataHolder
 	 */
 	public function setData($data)
 	{
+		if ($data instanceof \Traversable)
+		{
+			$data = iterator_to_array($data);
+		}
+
+		if (is_object($data))
+		{
+			$data = get_object_vars($data);
+		}
+
 		if (!empty($data['JSONData']))
 		{
 			$jsonData = json_decode($data['JSONData'], true);
@@ -146,6 +156,20 @@ class PaidReceiver extends AbstractDataHolder
 		$code = Pay2GoHelper::createCheckCode($this->data, $this->getHashKey(), $this->getHashIV());
 
 		return $code == $this->getCheckCode();
+	}
+
+	/**
+	 * render
+	 *
+	 * @param array $data
+	 *
+	 * @return  string
+	 */
+	public function render($data = array())
+	{
+		$data['receiver'] = $this;
+
+		return Pay2GoHelper::render('success.' . strtolower($this->getPaymentType()), $data);
 	}
 
 	/**
@@ -226,7 +250,9 @@ class PaidReceiver extends AbstractDataHolder
 
 		if (class_exists($class))
 		{
-			return $this->payment = new $class;
+			$this->payment = new $class;
+
+			return $this->payment->setData($this->getData());
 		}
 
 		throw new \UnexpectedValueException(sprintf('Payment %s not exists', $this->getPaymentType()));

@@ -80,6 +80,34 @@ class LaterPaymentFeedback extends PaidReceiver
 	}
 
 	/**
+	 * render
+	 *
+	 * @param array $data
+	 *
+	 * @return  string
+	 */
+	public function render($data = array())
+	{
+		$data['feedback'] = $this;
+
+		return Pay2GoHelper::render('feedback.' . strtolower($this->getPaymentType()), $data);
+	}
+
+	/**
+	 * renderBarcodePage
+	 *
+	 * @param array $data
+	 *
+	 * @return  string
+	 */
+	public function renderBarcodePage($data = array())
+	{
+		$data['feedback'] = $this;
+
+		return Pay2GoHelper::render('feedback.barcode-print', $data);
+	}
+
+	/**
 	 * __get
 	 *
 	 * @param   string  $name
@@ -97,7 +125,9 @@ class LaterPaymentFeedback extends PaidReceiver
 
 		if (class_exists($class))
 		{
-			return $this->payment = new $class;
+			$this->payment = new $class;
+
+			return $this->payment->setData($this->getData());
 		}
 
 		throw new \UnexpectedValueException(sprintf('Payment %s not exists for LaterPayment', $this->getPaymentType()));
