@@ -386,6 +386,6 @@ SCRTPT;
 			return $this->payments[strtolower($name)] = new $class;
 		}
 
-		throw new \UnexpectedValueException(sprintf('Property $s not exists', $name));
+		throw new \UnexpectedValueException(sprintf('Property %s not exists', $name));
 	}
 }
