@@ -250,6 +250,11 @@ class PaidReceiver extends AbstractDataHolder
 
 		$class = __NAMESPACE__ . '\Receiver\\' . ucfirst($this->getPaymentType());
 
+		if (!class_exists($class))
+		{
+			$class = __NAMESPACE__ . '\Receiver\\' . strtoupper($this->getPaymentType());
+		}
+
 		if (class_exists($class))
 		{
 			$this->payment = new $class;

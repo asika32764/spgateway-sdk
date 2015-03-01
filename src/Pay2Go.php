@@ -381,11 +381,16 @@ SCRTPT;
 
 		$class = __NAMESPACE__ . '\Payment\\' . ucfirst($name);
 
-		if (class_exists($class))
+		if (!class_exists($class))
 		{
-			return $this->payments[strtolower($name)] = new $class;
+			$class = __NAMESPACE__ . '\Payment\\' . strtoupper($name);
 		}
 
-		throw new \UnexpectedValueException(sprintf('Property %s not exists', $name));
+		if (!class_exists($class))
+		{
+			throw new \UnexpectedValueException(sprintf('Property %s not exists', $name));
+		}
+
+		return $this->payments[strtolower($name)] = new $class;
 	}
 }

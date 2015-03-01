@@ -125,6 +125,11 @@ class LaterPaymentFeedback extends PaidReceiver
 
 		$class = __NAMESPACE__ . '\Feedback\\' . ucfirst($this->getPaymentType());
 
+		if (!class_exists($class))
+		{
+			$class = __NAMESPACE__ . '\Feedback\\' . strtoupper($this->getPaymentType());
+		}
+
 		if (class_exists($class))
 		{
 			$this->payment = new $class;
