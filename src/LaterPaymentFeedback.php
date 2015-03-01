@@ -90,7 +90,9 @@ class LaterPaymentFeedback extends PaidReceiver
 	{
 		$data['feedback'] = $this;
 
-		return Pay2GoHelper::render('feedback.' . strtolower($this->getPaymentType()), $data);
+		$tmpl = $this->getPaymentType() ? : 'none';
+
+		return Pay2GoHelper::render('feedback.' . strtolower($tmpl), $data);
 	}
 
 	/**

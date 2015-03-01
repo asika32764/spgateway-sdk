@@ -169,7 +169,9 @@ class PaidReceiver extends AbstractDataHolder
 	{
 		$data['receiver'] = $this;
 
-		return Pay2GoHelper::render('success.' . strtolower($this->getPaymentType()), $data);
+		$tmpl = $this->getPaymentType() ? : 'none';
+
+		return Pay2GoHelper::render('success.' . strtolower($tmpl), $data);
 	}
 
 	/**
