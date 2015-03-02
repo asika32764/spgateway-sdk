@@ -71,12 +71,24 @@ class LaterPaymentFeedback extends PaidReceiver
 	{
 		parent::setData($data);
 
-		if ($this->getPaymentType() == AbstractPayment::CREDIT || $this->getPaymentType() == AbstractPayment::WEBATM)
+		if (!$this->isSupport($this->getPaymentType()))
 		{
 			throw new PaymentTypeException(sprintf('Payment %s does not support later payment feedback', $this->getPaymentType()));
 		}
 
 		return $this;
+	}
+
+	/**
+	 * isSupport
+	 *
+	 * @param string $type
+	 *
+	 * @return  boolean
+	 */
+	public function isSupport($type)
+	{
+		return !($type == AbstractPayment::CREDIT || $type == AbstractPayment::WEBATM);
 	}
 
 	/**

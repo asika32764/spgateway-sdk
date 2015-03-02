@@ -61,6 +61,10 @@ $payment  = $data->feedback->payment;
 			width: 100%;
 		}
 
+		td ul {
+			margin: 0;
+		}
+
 		input, textarea {
 			color : #000;
 		}
@@ -151,7 +155,7 @@ $payment  = $data->feedback->payment;
 	</button>
 </div>
 <div class="pc">
-	<div id="print_here" style="width: 800px; margin: 0 auto;">
+	<div id="print_here" style="width: 795px; margin: 0 auto;">
 		<div class="print_area" id="block" style=" margin-top: 10px; ">
 			<div style="text-align: center">
 				<img src="<?php echo $data->logo_img ?>" style="max-height: 80px; max-width: 300px;">
@@ -167,14 +171,14 @@ $payment  = $data->feedback->payment;
 			<div class="table_content" style="margin-top: 10px;">
 				<div class="content_table">
 					<table class="table table-bordered"
-						style="border:1px solid #ccc; width: 800px; margin-left: 10px; margin-bottom:10px;">
+						style="border:1px solid #ccc; width: 795px; margin-left: 10px; margin-bottom:10px;">
 
 						<tbody>
 						<tr>
 							<th style="text-align: center">付款資訊</th>
 							<th style="text-align: center">付款金額</th>
 							<th style="text-align: center">代收通路商用印處</th>
-							<th rowspan="2" style="width:20px;">本聯為客戶留存聯</th>
+							<th rowspan="2" style="width:20px;">客戶留存聯</th>
 						</tr>
 
 						<tr>
@@ -201,7 +205,7 @@ $payment  = $data->feedback->payment;
 			<div class="table_content">
 				<div class="content_table">
 					<table class="table table-bordered"
-						style="border:1px solid #ccc; width: 800px; margin-left: 10px; margin-bottom:10px;">
+						style="border:1px solid #ccc; width: 795px; margin-left: 10px; margin-bottom:10px;">
 						<thead>
 						<tr>
 							<th style="text-align: center">
@@ -228,7 +232,7 @@ $payment  = $data->feedback->payment;
 			<div class="table_content">
 				<div class="content_table">
 					<table class="table"
-						style="border:1px solid #ccc; width: 800px; margin-left: 10px;margin-bottom: 1px;">
+						style="border:1px solid #ccc; width: 795px; margin-left: 10px;margin-bottom: 1px;">
 						<thead>
 						<tr style=" font-weight: bolder;border-bottom:1px solid #ccc;">
 							<th style="text-align: center">
@@ -287,7 +291,7 @@ $payment  = $data->feedback->payment;
 			<!---第5排開始-->
 			<div class="table_content" style=" ">
 				<div class="content_table" style="display: inline-block">
-					<table class="table table-bordered  " style="border:1px solid #ccc; width: 800px; margin-left: 10px;margin-bottom:0px;">
+					<table class="table table-bordered  " style="border:1px solid #ccc; width: 795px; margin-left: 10px;margin-bottom:0px;">
 						<thead>
 						<tr style=" font-weight: bolder">
 							<th style="text-align: center">
@@ -314,7 +318,7 @@ $payment  = $data->feedback->payment;
 			<div class="table_content" style="margin-top: 10px; ">
 				<div class="content_table" style="display: inline-block; ">
 					<table class="table table-bordered"
-						style="border:1px solid #ccc; margin-left: 10px; margin-bottom:0; width: 800px;">
+						style="border:1px solid #ccc; margin-left: 10px; margin-bottom:0; width: 795px;">
 						<tbody>
 						<tr style=" font-weight: bolder">
 							<th style="text-align: center">條碼資訊</th>

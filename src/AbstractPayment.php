@@ -23,6 +23,8 @@ abstract class AbstractPayment extends AbstractDataHolder
 	const VACC    = 'VACC';
 	const WEBATM  = 'WEBATM';
 
+	const STATUS_SUCCESS = 'SUCCESS';
+
 	/**
 	 * Property laterPayment.
 	 *
