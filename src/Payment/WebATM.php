@@ -15,7 +15,7 @@ use Windwalker\Pay2Go\AbstractPayment;
  *
  * @since  {DEPLOY_VERSION}
  */
-class WebATM extends AbstractPayment
+class Webatm extends AbstractPayment
 {
 	/**
 	 * Property laterPayment.
