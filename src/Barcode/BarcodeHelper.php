@@ -20,7 +20,7 @@ abstract class BarcodeHelper
 	 *
 	 * @var  callable
 	 */
-	protected static $handler = array('Windwalker\Pay2Go\Barcode\BarcodeHelper', 'barcodes4');
+	protected static $handler = array(__CLASS__, 'barcodes4');
 
 	/**
 	 * generate

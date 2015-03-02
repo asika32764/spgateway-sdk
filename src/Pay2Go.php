@@ -13,41 +13,41 @@ use Windwalker\Pay2Go\Payment;
 /**
  * The Pay2Go class.
  *
- * @property-read  Payment\Alipay   $alipay  The Alipay payment
- * @property-read  Payment\ATM      $atm  An alias of VACC
- * @property-read  Payment\Barcode  $barcode  The Barcode payment
+ * @property-read  Payment\Alipay      $alipay      The Alipay payment
+ * @property-read  Payment\ATM         $atm         An alias of VACC
+ * @property-read  Payment\Barcode     $barcode     The Barcode payment
  * @property-read  Payment\CreditCard  $creditCard  The CreditCard payment
- * @property-read  Payment\CVS      $cvs  The CVS payment
- * @property-read  Payment\Tenpay   $tenpay  The CreditCard payment
- * @property-read  Payment\VACC     $vacc  The VACC payment
- * @property-read  Payment\WebATM   $webATM  The WebATM payment
+ * @property-read  Payment\CVS         $cvs         The CVS payment
+ * @property-read  Payment\Tenpay      $tenpay      The CreditCard payment
+ * @property-read  Payment\VACC        $vacc        The VACC payment
+ * @property-read  Payment\WebATM      $webATM      The WebATM payment
  *
- * @method  string  getMerchantID()  getMerchantID()
- * @method  Pay2Go  setMerchantID()  setMerchantID($value)
- * @method  string  getRespondType()  getRespondType()
- * @method  Pay2Go  setRespondType()  setRespondType($value)
+ * @method  string  getMerchantID()       getMerchantID()
+ * @method  Pay2Go  setMerchantID()       setMerchantID($value)
+ * @method  string  getRespondType()      getRespondType()
+ * @method  Pay2Go  setRespondType()      setRespondType($value)
  * @method  string  getMerchantOrderNo()  getMerchantOrderNo()
  * @method  Pay2Go  setMerchantOrderNo()  setMerchantOrderNo($value)
- * @method  string  getTimeStamp()  getTimeStamp()
- * @method  Pay2Go  setTimeStamp()  setTimeStamp($value)
- * @method  string  getVersion()  getVersion()
- * @method  Pay2Go  setVersion()  setVersion($value)
- * @method  string  getAmt()  getAmt()
- * @method  Pay2Go  setAmt()  setAmt($value)
- * @method  string  getItemDesc()  getItemDesc()
- * @method  Pay2Go  setItemDesc()  setItemDesc($value)
- * @method  string  getExpireDate()  getExpireDate()
- * @method  Pay2Go  setExpireDate()  setExpireDate($value)
- * @method  Pay2Go  setReturnURL()  setReturnURL($value)
- * @method  string  getReturnURL()  getReturnURL()
- * @method  string  getNotifyURL()  getNotifyURL()
- * @method  Pay2Go  setNotifyURL()  setNotifyURL($value)
- * @method  Pay2Go  setCustomerURL()  setCustomerURL($value)
- * @method  string  getCustomerURL()  getCustomerURL()
- * @method  string  getEmail()  getEmail()
- * @method  Pay2Go  setEmail()  setEmail($value)
- * @method  string  getLoginType()  getLoginType()
- * @method  Pay2Go  setLoginType()  setLoginType($value)
+ * @method  string  getTimeStamp()        getTimeStamp()
+ * @method  Pay2Go  setTimeStamp()        setTimeStamp($value)
+ * @method  string  getVersion()          getVersion()
+ * @method  Pay2Go  setVersion()          setVersion($value)
+ * @method  string  getAmt()              getAmt()
+ * @method  Pay2Go  setAmt()              setAmt($value)
+ * @method  string  getItemDesc()         getItemDesc()
+ * @method  Pay2Go  setItemDesc()         setItemDesc($value)
+ * @method  string  getExpireDate()       getExpireDate()
+ * @method  Pay2Go  setExpireDate()       setExpireDate($value)
+ * @method  Pay2Go  setReturnURL()        setReturnURL($value)
+ * @method  string  getReturnURL()        getReturnURL()
+ * @method  string  getNotifyURL()        getNotifyURL()
+ * @method  Pay2Go  setNotifyURL()        setNotifyURL($value)
+ * @method  Pay2Go  setCustomerURL()      setCustomerURL($value)
+ * @method  string  getCustomerURL()      getCustomerURL()
+ * @method  string  getEmail()            getEmail()
+ * @method  Pay2Go  setEmail()            setEmail($value)
+ * @method  string  getLoginType()        getLoginType()
+ * @method  Pay2Go  setLoginType()        setLoginType($value)
  *
  * @since  {DEPLOY_VERSION}
  */
@@ -73,20 +73,20 @@ class Pay2Go extends AbstractDataHolder
 	 * @var  array
 	 */
 	protected $data = array(
-		'MerchantID'  => null,
-		'RespondType' => 'JSON',
-		'CheckValue'  => null,
-		'TimeStamp'   => null,
+		'MerchantID'      => null,
+		'RespondType'     => 'JSON',
+		'CheckValue'      => null,
+		'TimeStamp'       => null,
 		'MerchantOrderNo' => null,
-		'Version'    => '1.1',
-		'Amt'        => null,
-		'ItemDesc'   => null,
-		'ExpireDate' => null,
-		'ReturnURL'  => null,
-		'NotifyURL'  => null,
-		'CustomerURL' => null,
-		'Email'     => null,
-		'LoginType' => 1
+		'Version'         => '1.1',
+		'Amt'             => null,
+		'ItemDesc'        => null,
+		'ExpireDate'      => null,
+		'ReturnURL'       => null,
+		'NotifyURL'       => null,
+		'CustomerURL'     => null,
+		'Email'           => null,
+		'LoginType'       => 1
 	);
 
 	/**
@@ -144,11 +144,12 @@ class Pay2Go extends AbstractDataHolder
 	/**
 	 * render
 	 *
+	 * @param string $content
 	 * @param string $formId
 	 *
-	 * @return  string
+	 * @return string
 	 */
-	public function render($formId = 'pay2go-form')
+	public function render($content = '', $formId = 'pay2go-form')
 	{
 		$this->prepareRender();
 
@@ -156,7 +157,7 @@ class Pay2Go extends AbstractDataHolder
 			'<form action="%s" id="%s" method="post">%s</form>',
 			$this->getPostUrl(),
 			$formId,
-			$this->renderInputs()
+			"\n" . $content . "\n\n" . $content . $this->renderInputs() . "\n"
 		);
 	}
 
@@ -216,15 +217,17 @@ class Pay2Go extends AbstractDataHolder
 	/**
 	 * post
 	 *
-	 * @return  void
+	 * @param bool $immediately
+	 *
+	 * @return string
 	 */
-	public function post()
+	public function post($immediately = false)
 	{
 		$formId = 'pay2go-form';
 
-		echo $this->render($formId);
+		$output =  $this->render('', $formId);
 
-		echo <<<SCRTPT
+		$output .= <<<SCRTPT
 <script>
 	var form = document.getElementById('{$formId}');
 
@@ -232,7 +235,14 @@ class Pay2Go extends AbstractDataHolder
 </script>
 SCRTPT;
 
-		die;
+		if ($immediately)
+		{
+			echo $output;
+
+			die;
+		}
+
+		return $output;
 	}
 
 	/**

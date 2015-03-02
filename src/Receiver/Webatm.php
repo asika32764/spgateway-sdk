@@ -11,10 +11,10 @@ namespace Windwalker\Pay2Go\Receiver;
 /**
  * The WebATM payment.
  *
- * @method  string  getPayBankCode()  getPayBankCode()
- * @method  VACC    setPayBankCode()  setPayBankCode($value)
+ * @method  string  getPayBankCode()        getPayBankCode()
+ * @method  WebATM  setPayBankCode()        setPayBankCode($value)
  * @method  string  getPayerAccount5Code()  getPayerAccount5Code()
- * @method  VACC    setPayerAccount5Code()  setPayerAccount5Code($value)
+ * @method  WebATM  setPayerAccount5Code()  setPayerAccount5Code($value)
  *
  * @since  {DEPLOY_VERSION}
  */

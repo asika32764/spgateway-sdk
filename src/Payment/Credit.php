@@ -6,13 +6,13 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Feedback;
+namespace Windwalker\Pay2Go\Payment;
 
 /**
- * An alias of VACC payment.
- *
+ * The alias of CreditCard class.
+ * 
  * @since  {DEPLOY_VERSION}
  */
-class ATM extends VACC
+class Credit extends CreditCard
 {
 }

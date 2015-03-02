@@ -8,12 +8,12 @@
 
 use Windwalker\Pay2Go\Barcode\BarcodeHelper;
 use Windwalker\Pay2Go\Feedback\Barcode;
-use Windwalker\Pay2Go\LaterPaymentFeedback;
+use Windwalker\Pay2Go\FeedbackReceiver;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
  * @var  AbstractRenderer     $this
- * @var  LaterPaymentFeedback $feedback
+ * @var  FeedbackReceiver $feedback
  * @var  Barcode              $payment
  */
 $feedback = $data->feedback;

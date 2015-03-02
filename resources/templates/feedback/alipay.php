@@ -6,21 +6,20 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-use Windwalker\Pay2Go\Feedback\Barcode;
+use Windwalker\Pay2Go\Feedback\VACC;
 use Windwalker\Pay2Go\FeedbackReceiver;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
  * @var  AbstractRenderer     $this
  * @var  FeedbackReceiver $feedback
- * @var  Barcode              $payment
+ * @var  VACC                 $payment
  */
 $feedback = $data->feedback;
 $payment  = $data->feedback->payment;
 ?>
-
 <p>
-	四大超商、農漁會通路 皆可代收款項。
+	付款資料接收中
 </p>
 
 <table class="<?php echo $data->table_class ?>">
@@ -36,18 +35,4 @@ $payment  = $data->feedback->payment;
 		<th>訂單編號</th>
 		<td><?php echo $this->escape($feedback->getMerchantOrderNo()) ?></td>
 	</tr>
-	<tr>
-		<th>有效付款期限</th>
-		<td><?php echo $this->escape($feedback->getExpireDate()) ?></td>
-	</tr>
-	<?php if ($data->print_barcode_url): ?>
-	<tr>
-		<th>付款單</th>
-		<td>
-			<a href="<?php echo $data->print_barcode_url; ?>" target="_blank">
-				按此列印
-			</a>
-		</td>
-	</tr>
-	<?php endif; ?>
 </table>

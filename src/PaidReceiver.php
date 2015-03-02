@@ -8,6 +8,7 @@
 
 namespace Windwalker\Pay2Go;
 
+use Windwalker\Pay2Go\Exception\PaymentTypeException;
 use Windwalker\Pay2Go\Receiver;
 
 /**
@@ -262,6 +263,6 @@ class PaidReceiver extends AbstractDataHolder
 			return $this->payment->setData($this->getData());
 		}
 
-		throw new \UnexpectedValueException(sprintf('Payment %s not exists', $this->getPaymentType()));
+		throw new PaymentTypeException(sprintf('Payment %s not exists', $this->getPaymentType()));
 	}
 }

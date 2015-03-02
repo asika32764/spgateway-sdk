@@ -13,12 +13,12 @@ use Windwalker\Pay2Go\AbstractPayment;
 /**
  * The VACC payment.
  *
- * @method  string  getPayBankCode()  getPayBankCode()
- * @method  VACC    setPayBankCode()  setPayBankCode($value)
+ * @method  string  getPayBankCode()   getPayBankCode()
+ * @method  VACC    setPayBankCode()   setPayBankCode($value)
  * @method  string  getPayerAccount5Code()  getPayerAccount5Code()
  * @method  VACC    setPayerAccount5Code()  setPayerAccount5Code($value)
- * @method  string  getBankCode()  getBankCode()
- * @method  VACC    setBankCode()  setBankCode($value)
+ * @method  string  getBankCode()      getBankCode()
+ * @method  VACC    setBankCode()      setBankCode($value)
  * @method  string  getAccount5Code()  getAccount5Code()
  * @method  VACC    setAccount5Code()  setAccount5Code($value)
  *
@@ -41,10 +41,6 @@ class VACC extends AbstractPayment
 	protected $data = array(
 		'PayBankCode' => null,
 		'PayerAccount5Code' => null,
-
-		// For Number Receiver
-		'BankCode' => null,
-		'CodeNo' => null
 	);
 
 	/**

@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Receiver;
+namespace Windwalker\Pay2Go\Payment;
 
 /**
  * The TENPAY payment.
@@ -15,26 +15,6 @@ namespace Windwalker\Pay2Go\Receiver;
  */
 class Tenpay extends Alipay
 {
-	/**
-	 * Property laterPayment.
-	 *
-	 * @var  boolean
-	 */
-	protected $laterPayment = true;
-
-	/**
-	 * Property data.
-	 *
-	 * @var  array
-	 */
-	protected $data = array(
-		'TENPAY' => null,
-		'Receiver' => null,
-		'Tel1' => null,
-		'Tel2' => null,
-		'Count' => null
-	);
-
 	/**
 	 * getName
 	 *

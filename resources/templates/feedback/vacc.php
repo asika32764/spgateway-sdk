@@ -7,12 +7,12 @@
  */
 
 use Windwalker\Pay2Go\Feedback\VACC;
-use Windwalker\Pay2Go\LaterPaymentFeedback;
+use Windwalker\Pay2Go\FeedbackReceiver;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
  * @var  AbstractRenderer     $this
- * @var  LaterPaymentFeedback $feedback
+ * @var  FeedbackReceiver $feedback
  * @var  VACC                 $payment
  */
 $feedback = $data->feedback;

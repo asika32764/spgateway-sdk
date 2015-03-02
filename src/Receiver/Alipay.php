@@ -14,13 +14,13 @@ use Windwalker\Pay2Go\AbstractPayment;
  * The Alipay payment.
  *
  * @method  string  getReceiver()  getReceiver()
- * @method  ALIPAY  setReceiver()  setReceiver($value)
- * @method  string  getTel1()  getTel1()
- * @method  ALIPAY  setTel1()  setTel1($value)
- * @method  string  getTel2()  getTel2()
- * @method  ALIPAY  setTel2()  setTel2($value)
- * @method  string  getCount()  getCount()
- * @method  ALIPAY  setCount()  setCount($value)
+ * @method  Alipay  setReceiver()  setReceiver($value)
+ * @method  string  getTel1()      getTel1()
+ * @method  Alipay  setTel1()      setTel1($value)
+ * @method  string  getTel2()      getTel2()
+ * @method  Alipay  setTel2()      setTel2($value)
+ * @method  string  getCount()     getCount()
+ * @method  Alipay  setCount()     setCount($value)
  *
  * @since  {DEPLOY_VERSION}
  */

@@ -9,10 +9,10 @@
 namespace Windwalker\Pay2Go\Feedback;
 
 /**
- * An alias of VACC payment.
+ * The CVS payment.
  *
  * @since  {DEPLOY_VERSION}
  */
-class ATM extends VACC
+class Alipay extends \Windwalker\Pay2Go\Receiver\Alipay
 {
 }
