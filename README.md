@@ -7,6 +7,7 @@
 ``` php
 $pay2go = new Pay2Go('MerchantID', 'key', 'iv');
 
+// Basic options
 $pay2go->setTest(true) // Use Test Platform
 	->setMerchantOrderNo($orderNo)
 	->setVersion('1.1')
@@ -19,15 +20,17 @@ $pay2go->setTest(true) // Use Test Platform
 	->setReturnURL($returnUrl)
 	->setCustomerURL($customUrl);
 
-$pay2go->atm->enable();
-$pay2go->barcode->enable();
-$pay2go->cvs->enable();
-$pay2go->webATM->enable();
+$pay2go->atm->enable();     // 啟用 ATM
+$pay2go->barcode->enable(); // 啟用條碼
+$pay2go->cvs->enable();     // 啟用超商代碼
+$pay2go->webATM->enable();  // 啟用 Web ATM
 
+// 啟用信用卡
 $pay2go->creditCard->enable()
 	->setUNIONPAY(1)
 	->installment('3, 6, 12');
 
+// 啟用支付寶
 $pay2go->alipay->enable()
 	->setReceiver('Sakura')
 	->setTel1('123-12312-123')
@@ -41,6 +44,7 @@ $pay2go->alipay->enable()
 		1
 	);
 
+// 啟用財富通
 $pay2go->tenpay->enable()
 	->setReceiver('Flower')
 	->setTel1('123-12312-123')
@@ -54,6 +58,7 @@ $pay2go->tenpay->enable()
 		1
 	);
 
+// 輸出成 <form> 直接 POST 即可繳費
 echo $pay2go->redner(); // Render HTML Form
 ```
 
