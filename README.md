@@ -5,7 +5,7 @@
 ## 使用範例
 
 ``` php
-$pay2go = new Pay2Go('MerchantID', 'key', 'iv');
+$pay2go = new \Windwalker\Pay2Go\Pay2Go('MerchantID', 'key', 'iv');
 
 // Basic options
 $pay2go->setTest(true) // Use Test Platform
