@@ -6,8 +6,8 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-use Windwalker\Spgateway\Pending\Barcode;
-use Windwalker\Spgateway\PendingReceiver;
+use Asika\Spgateway\Pending\Barcode;
+use Asika\Spgateway\PendingReceiver;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
@@ -25,7 +25,7 @@ $payment  = $pending->payment;
 <table class="<?php echo $table_class ?>">
 	<tr>
 		<th width="<?php echo $title_width ?>">付款方式</th>
-		<td><?php echo \Windwalker\Spgateway\SpgatewayHelper::getPaymentTitle($pending->getPaymentType()) ?></td>
+		<td><?php echo \Asika\Spgateway\SpgatewayHelper::getPaymentTitle($pending->getPaymentType()) ?></td>
 	</tr>
 	<tr>
 		<th>金額</th>

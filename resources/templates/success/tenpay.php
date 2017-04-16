@@ -6,8 +6,8 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-use Windwalker\Spgateway\PaidReceiver;
-use Windwalker\Spgateway\Receiver\VACC;
+use Asika\Spgateway\PaidReceiver;
+use Asika\Spgateway\Receiver\VACC;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
@@ -20,7 +20,7 @@ $payment  = $receiver->payment;
 <table class="<?php echo $table_class ?>">
 	<tr>
 		<th width="<?php echo $title_width ?>">付款方式</th>
-		<td><?php echo \Windwalker\Spgateway\SpgatewayHelper::getPaymentTitle($receiver->getPaymentType()) ?></td>
+		<td><?php echo \Asika\Spgateway\SpgatewayHelper::getPaymentTitle($receiver->getPaymentType()) ?></td>
 	</tr>
 	<tr>
 		<th>金額</th>

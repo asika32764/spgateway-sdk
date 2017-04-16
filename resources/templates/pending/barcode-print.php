@@ -6,9 +6,9 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-use Windwalker\Spgateway\Barcode\BarcodeHelper;
-use Windwalker\Spgateway\Pending\Barcode;
-use Windwalker\Spgateway\PendingReceiver;
+use Asika\Spgateway\Barcode\BarcodeHelper;
+use Asika\Spgateway\Pending\Barcode;
+use Asika\Spgateway\PendingReceiver;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
