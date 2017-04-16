@@ -9,8 +9,8 @@
 namespace Asika\Spgateway\Renderer;
 
 use Asika\Spgateway\SpgatewayHelper;
-use Asika\Renderer\AbstractRenderer;
-use Asika\Renderer\PhpRenderer;
+use Windwalker\Renderer\AbstractRenderer;
+use Windwalker\Renderer\PhpRenderer;
 
 /**
  * The RendererHelper class.
@@ -37,7 +37,7 @@ abstract class RendererHelper
 		{
 			static::$renderer = new PhpRenderer;
 
-			static::$renderer->addPath(SpgatewayHelper::getPay2GoRoot() . '/resources/templates');
+			static::$renderer->addPath(SpgatewayHelper::getSpgatewayRoot() . '/resources/templates');
 		}
 
 		return static::$renderer;

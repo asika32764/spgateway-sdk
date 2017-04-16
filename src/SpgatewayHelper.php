@@ -9,7 +9,7 @@
 namespace Asika\Spgateway;
 
 use Asika\Spgateway\Renderer\RendererHelper;
-use Asika\Renderer\PhpRenderer;
+use Windwalker\Renderer\PhpRenderer;
 
 /**
  * The Pay2GoHelper class.
@@ -170,7 +170,7 @@ abstract class SpgatewayHelper
 			return static::$languages;
 		}
 
-		return static::$languages = parse_ini_file(static::getPay2GoRoot() . '/resources/languages/zh-TW.ini', true);
+		return static::$languages = parse_ini_file(static::getSpgatewayRoot() . '/resources/languages/zh-TW.ini', true);
 	}
 
 	/**
@@ -193,7 +193,7 @@ abstract class SpgatewayHelper
 	 *
 	 * @return  string
 	 */
-	public static function getPay2GoRoot()
+	public static function getSpgatewayRoot()
 	{
 		return realpath(__DIR__ . '/..');
 	}
