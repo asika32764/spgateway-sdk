@@ -6,11 +6,11 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway\Renderer;
+namespace Asika\Spgateway\Renderer;
 
-use Windwalker\Spgateway\SpgatewayHelper;
-use Windwalker\Renderer\AbstractRenderer;
-use Windwalker\Renderer\PhpRenderer;
+use Asika\Spgateway\SpgatewayHelper;
+use Asika\Renderer\AbstractRenderer;
+use Asika\Renderer\PhpRenderer;
 
 /**
  * The RendererHelper class.

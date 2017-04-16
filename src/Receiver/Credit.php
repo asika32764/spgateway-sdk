@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway\Receiver;
+namespace Asika\Spgateway\Receiver;
 
 /**
  * The CreditCard class.

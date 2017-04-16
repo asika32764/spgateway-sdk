@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway\Barcode;
+namespace Asika\Spgateway\Barcode;
 
 /**
  * The Barcode class.

@@ -6,10 +6,10 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway;
+namespace Asika\Spgateway;
 
-use Windwalker\Spgateway\Renderer\RendererHelper;
-use Windwalker\Renderer\PhpRenderer;
+use Asika\Spgateway\Renderer\RendererHelper;
+use Asika\Renderer\PhpRenderer;
 
 /**
  * The Pay2GoHelper class.

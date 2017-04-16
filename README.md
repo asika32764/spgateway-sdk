@@ -5,14 +5,14 @@
 ## 使用範例
 
 ``` php
-$spgateway = new \Windwalker\Spgateway\Spgateway('MerchantID', 'key', 'iv');
+$spgateway = new \Asika\Spgateway\Spgateway('MerchantID', 'key', 'iv');
 
 // Basic options
 $spgateway->setTest(true) // Use Test Platform
 	->setMerchantOrderNo($orderNo)
 	->setVersion('1.2')
 	->setAmt((int) $price)
-	->setRespondType(Pay2Go::RESPONSE_TYPE_STRING) // Use String response
+	->setRespondType(Spgateway::RESPONSE_TYPE_STRING) // Use String response
 	->setItemDesc($desc)
 	->setEmail($email)
 	->setLoginType(0)
@@ -59,7 +59,7 @@ $spgateway->tenpay->enable()
 	);
 
 // 輸出成 <form> 直接 POST 即可繳費
-echo $spgateway->redner(); // Render HTML Form
+echo $spgateway->redner('<button>Submit</button>'); // Render HTML Form
 ```
 
 

@@ -6,9 +6,9 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway\Payment;
+namespace Asika\Spgateway\Payment;
 
-use Windwalker\Spgateway\Payment\AbstractPayment;
+use Asika\Spgateway\Payment\AbstractPayment;
 
 /**
  * The CreditCard class.

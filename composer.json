@@ -16,7 +16,7 @@
     "minimum-stability": "beta",
     "autoload": {
         "psr-4": {
-            "Windwalker\\Spgateway\\": "src/"
+            "Asika\\Spgateway\\": "src/"
         }
     }
 }

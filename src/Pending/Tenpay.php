@@ -6,13 +6,13 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway\Pending;
+namespace Asika\Spgateway\Pending;
 
 /**
  * The CVS payment.
  *
  * @since  {DEPLOY_VERSION}
  */
-class Tenpay extends \Windwalker\Spgateway\Receiver\Tenpay
+class Tenpay extends \Asika\Spgateway\Receiver\Tenpay
 {
 }

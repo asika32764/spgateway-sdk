@@ -6,7 +6,7 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway;
+namespace Asika\Spgateway;
 
 /**
  * The AbstractDataHolder class.

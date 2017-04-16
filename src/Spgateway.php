@@ -6,10 +6,10 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway;
+namespace Asika\Spgateway;
 
-use Windwalker\Spgateway\Payment;
-use Windwalker\Spgateway\Payment\AbstractPayment;
+use Asika\Spgateway\Payment;
+use Asika\Spgateway\Payment\AbstractPayment;
 
 /**
  * The Spgateway class.

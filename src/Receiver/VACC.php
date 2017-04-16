@@ -6,9 +6,9 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway\Receiver;
+namespace Asika\Spgateway\Receiver;
 
-use Windwalker\Spgateway\Payment\AbstractPayment;
+use Asika\Spgateway\Payment\AbstractPayment;
 
 /**
  * The VACC payment.

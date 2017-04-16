@@ -6,11 +6,11 @@
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Spgateway;
+namespace Asika\Spgateway;
 
-use Windwalker\Spgateway\Exception\PaymentTypeException;
-use Windwalker\Spgateway\Payment\AbstractPayment;
-use Windwalker\Spgateway\Receiver;
+use Asika\Spgateway\Exception\PaymentTypeException;
+use Asika\Spgateway\Payment\AbstractPayment;
+use Asika\Spgateway\Receiver;
 
 /**
  * The Paymentpending class.
