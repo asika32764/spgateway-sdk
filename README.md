@@ -79,7 +79,7 @@ $spgateway->post();
 
 ```php
 $receiver = new \Asika\Spgateway\PaidReceiver('MerchantID', 'key', 'iv');
-$receiver->setData($this->input->post->getArray());
+$receiver->setData($_POST);
 
 // You can log data here
 
@@ -122,7 +122,7 @@ $myOrder->save();
 
 ```php
 $receiver = new \Asika\Spgateway\PaidReceiver('MerchantID', 'key', 'iv');
-$receiver->setData($this->input->post->getArray());
+$receiver->setData($_POST);
 
 // Validate transaction
 if (!$receiver->validate())
