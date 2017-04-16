@@ -30,7 +30,7 @@ class PendingReceiver extends PaidReceiver
 	protected $data = array(
 		'MerchantID'      => null,
 		'MerchantName'    => null,
-		'Version'         => '1.1',
+		'Version'         => '1.2',
 		'Status'          => null,
 		'Message'         => null,
 		'Amt'             => null,

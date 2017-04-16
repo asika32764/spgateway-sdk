@@ -79,7 +79,7 @@ class Spgateway extends AbstractDataHolder
 		'CheckValue'      => null,
 		'TimeStamp'       => null,
 		'MerchantOrderNo' => null,
-		'Version'         => '1.1',
+		'Version'         => '1.2',
 		'Amt'             => null,
 		'ItemDesc'        => null,
 		'ExpireDate'      => null,
@@ -158,7 +158,7 @@ class Spgateway extends AbstractDataHolder
 			'<form action="%s" id="%s" method="post">%s</form>',
 			$this->getPostUrl(),
 			$formId,
-			"\n" . $content . "\n\n" . $content . $this->renderInputs() . "\n"
+			"\n" . $content . "\n\n" . $this->renderInputs() . "\n"
 		);
 	}
 

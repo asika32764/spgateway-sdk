@@ -57,7 +57,7 @@ class PaidReceiver extends AbstractDataHolder
 	 */
 	protected $data = array(
 		'MerchantID'  => null,
-		'Version'     => '1.1',
+		'Version'     => '1.2',
 		'Status'      => null,
 		'Message'     => null,
 		'Result'      => null,
