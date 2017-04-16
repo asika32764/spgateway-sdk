@@ -1,13 +1,13 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-use Windwalker\Pay2Go\PaidReceiver;
-use Windwalker\Pay2Go\Receiver\WEBATM;
+use Windwalker\Spgateway\PaidReceiver;
+use Windwalker\Spgateway\Receiver\WEBATM;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
@@ -15,13 +15,12 @@ use Windwalker\Renderer\AbstractRenderer;
  * @var  PaidReceiver     $receiver
  * @var  WEBATM              $payment
  */
-$receiver = $data->receiver;
-$payment  = $data->receiver->payment;
+$payment  = $receiver->payment;
 ?>
-<table class="<?php echo $data->table_class ?>">
+<table class="<?php echo $table_class ?>">
 	<tr>
-		<th width="<?php echo $data->title_width ?>">付款方式</th>
-		<td><?php echo \Windwalker\Pay2Go\Pay2GoHelper::getPaymentTitle($receiver->getPaymentType()) ?></td>
+		<th width="<?php echo $title_width ?>">付款方式</th>
+		<td><?php echo \Windwalker\Spgateway\SpgatewayHelper::getPaymentTitle($receiver->getPaymentType()) ?></td>
 	</tr>
 	<tr>
 		<th>金額</th>

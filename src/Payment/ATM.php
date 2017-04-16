@@ -1,12 +1,12 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Payment;
+namespace Windwalker\Spgateway\Payment;
 
 /**
  * An alias of VACC payment.

@@ -1,12 +1,12 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Receiver;
+namespace Windwalker\Spgateway\Receiver;
 
 /**
  * The TENPAY payment.
@@ -29,7 +29,7 @@ class Tenpay extends Alipay
 	 *
 	 * @var  boolean
 	 */
-	protected $laterPayment = true;
+	protected $deferralPayment = true;
 
 	/**
 	 * getName

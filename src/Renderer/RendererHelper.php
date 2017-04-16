@@ -1,14 +1,14 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Renderer;
+namespace Windwalker\Spgateway\Renderer;
 
-use Windwalker\Pay2Go\Pay2GoHelper;
+use Windwalker\Spgateway\SpgatewayHelper;
 use Windwalker\Renderer\AbstractRenderer;
 use Windwalker\Renderer\PhpRenderer;
 
@@ -37,7 +37,7 @@ abstract class RendererHelper
 		{
 			static::$renderer = new PhpRenderer;
 
-			static::$renderer->addPath(Pay2GoHelper::getPay2GoRoot() . '/resources/templates');
+			static::$renderer->addPath(SpgatewayHelper::getPay2GoRoot() . '/resources/templates');
 		}
 
 		return static::$renderer;

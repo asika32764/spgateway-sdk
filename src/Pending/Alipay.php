@@ -1,18 +1,18 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Feedback;
+namespace Windwalker\Spgateway\Pending;
 
 /**
  * The CVS payment.
  *
  * @since  {DEPLOY_VERSION}
  */
-class Alipay extends \Windwalker\Pay2Go\Receiver\Alipay
+class Alipay extends \Windwalker\Spgateway\Receiver\Alipay
 {
 }

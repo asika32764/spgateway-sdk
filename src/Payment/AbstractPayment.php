@@ -1,12 +1,14 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go;
+namespace Windwalker\Spgateway\Payment;
+
+use Windwalker\Spgateway\AbstractDataHolder;
 
 /**
  * The AbstractPayment class.
@@ -26,11 +28,11 @@ abstract class AbstractPayment extends AbstractDataHolder
 	const STATUS_SUCCESS = 'SUCCESS';
 
 	/**
-	 * Property laterPayment.
+	 * Property deferralPayment.
 	 *
 	 * @var  boolean
 	 */
-	protected $laterPayment = false;
+	protected $deferralPayment = false;
 
 	/**
 	 * getName
@@ -74,13 +76,13 @@ abstract class AbstractPayment extends AbstractDataHolder
 	}
 
 	/**
-	 * isLaterPayment
+	 * isDeferralPayment
 	 *
 	 * @return  boolean
 	 */
-	public function isLaterPayment()
+	public function isDeferralPayment()
 	{
-		return $this->laterPayment;
+		return $this->deferralPayment;
 	}
 
 	/**
@@ -90,6 +92,6 @@ abstract class AbstractPayment extends AbstractDataHolder
 	 */
 	public function isInstantPayment()
 	{
-		return !$this->laterPayment;
+		return !$this->deferralPayment;
 	}
 }

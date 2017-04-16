@@ -1,15 +1,16 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go;
+namespace Windwalker\Spgateway;
 
-use Windwalker\Pay2Go\Exception\PaymentTypeException;
-use Windwalker\Pay2Go\Receiver;
+use Windwalker\Spgateway\Exception\PaymentTypeException;
+use Windwalker\Spgateway\Payment\AbstractPayment;
+use Windwalker\Spgateway\Receiver;
 
 /**
  * The PaidReceiver class.
@@ -154,7 +155,7 @@ class PaidReceiver extends AbstractDataHolder
 	 */
 	public function validate()
 	{
-		$code = Pay2GoHelper::createCheckCode($this->data, $this->getHashKey(), $this->getHashIV());
+		$code = SpgatewayHelper::createCheckCode($this->data, $this->getHashKey(), $this->getHashIV());
 
 		return $code == $this->getCheckCode();
 	}
@@ -172,7 +173,7 @@ class PaidReceiver extends AbstractDataHolder
 
 		$tmpl = $this->getPaymentType() ? : 'none';
 
-		return Pay2GoHelper::render('success.' . strtolower($tmpl), $data);
+		return SpgatewayHelper::render('success.' . strtolower($tmpl), $data);
 	}
 
 	/**

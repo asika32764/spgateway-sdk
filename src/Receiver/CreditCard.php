@@ -1,14 +1,14 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Receiver;
+namespace Windwalker\Spgateway\Receiver;
 
-use Windwalker\Pay2Go\AbstractPayment;
+use Windwalker\Spgateway\Payment\AbstractPayment;
 
 /**
  * The CreditCard class.
@@ -39,7 +39,7 @@ class CreditCard extends AbstractPayment
 	 *
 	 * @var  boolean
 	 */
-	protected $laterPayment = false;
+	protected $deferralPayment = false;
 
 	/**
 	 * Property data.

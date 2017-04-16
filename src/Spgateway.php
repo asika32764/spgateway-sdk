@@ -1,17 +1,18 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go;
+namespace Windwalker\Spgateway;
 
-use Windwalker\Pay2Go\Payment;
+use Windwalker\Spgateway\Payment;
+use Windwalker\Spgateway\Payment\AbstractPayment;
 
 /**
- * The Pay2Go class.
+ * The Spgateway class.
  *
  * @property-read  Payment\Alipay      $alipay      The Alipay payment
  * @property-read  Payment\ATM         $atm         An alias of VACC
@@ -23,35 +24,35 @@ use Windwalker\Pay2Go\Payment;
  * @property-read  Payment\WebATM      $webATM      The WebATM payment
  *
  * @method  string  getMerchantID()       getMerchantID()
- * @method  Pay2Go  setMerchantID()       setMerchantID($value)
+ * @method  Spgateway  setMerchantID()       setMerchantID($value)
  * @method  string  getRespondType()      getRespondType()
- * @method  Pay2Go  setRespondType()      setRespondType($value)
+ * @method  Spgateway  setRespondType()      setRespondType($value)
  * @method  string  getMerchantOrderNo()  getMerchantOrderNo()
- * @method  Pay2Go  setMerchantOrderNo()  setMerchantOrderNo($value)
+ * @method  Spgateway  setMerchantOrderNo()  setMerchantOrderNo($value)
  * @method  string  getTimeStamp()        getTimeStamp()
- * @method  Pay2Go  setTimeStamp()        setTimeStamp($value)
+ * @method  Spgateway  setTimeStamp()        setTimeStamp($value)
  * @method  string  getVersion()          getVersion()
- * @method  Pay2Go  setVersion()          setVersion($value)
+ * @method  Spgateway  setVersion()          setVersion($value)
  * @method  string  getAmt()              getAmt()
- * @method  Pay2Go  setAmt()              setAmt($value)
+ * @method  Spgateway  setAmt()              setAmt($value)
  * @method  string  getItemDesc()         getItemDesc()
- * @method  Pay2Go  setItemDesc()         setItemDesc($value)
+ * @method  Spgateway  setItemDesc()         setItemDesc($value)
  * @method  string  getExpireDate()       getExpireDate()
- * @method  Pay2Go  setExpireDate()       setExpireDate($value)
- * @method  Pay2Go  setReturnURL()        setReturnURL($value)
+ * @method  Spgateway  setExpireDate()       setExpireDate($value)
+ * @method  Spgateway  setReturnURL()        setReturnURL($value)
  * @method  string  getReturnURL()        getReturnURL()
  * @method  string  getNotifyURL()        getNotifyURL()
- * @method  Pay2Go  setNotifyURL()        setNotifyURL($value)
- * @method  Pay2Go  setCustomerURL()      setCustomerURL($value)
+ * @method  Spgateway  setNotifyURL()        setNotifyURL($value)
+ * @method  Spgateway  setCustomerURL()      setCustomerURL($value)
  * @method  string  getCustomerURL()      getCustomerURL()
  * @method  string  getEmail()            getEmail()
- * @method  Pay2Go  setEmail()            setEmail($value)
+ * @method  Spgateway  setEmail()            setEmail($value)
  * @method  string  getLoginType()        getLoginType()
- * @method  Pay2Go  setLoginType()        setLoginType($value)
+ * @method  Spgateway  setLoginType()        setLoginType($value)
  *
  * @since  {DEPLOY_VERSION}
  */
-class Pay2Go extends AbstractDataHolder
+class Spgateway extends AbstractDataHolder
 {
 	/**
 	 * Property hashKey.
@@ -266,7 +267,7 @@ SCRTPT;
 	 */
 	public function getCheckValue()
 	{
-		return Pay2GoHelper::createCheckValue($this->data, $this->getHashKey(), $this->getHashIV());
+		return SpgatewayHelper::createCheckValue($this->data, $this->getHashKey(), $this->getHashIV());
 	}
 
 	/**
@@ -297,10 +298,10 @@ SCRTPT;
 	{
 		if ($this->test)
 		{
-			return 'https://capi.pay2go.com/MPG/mpg_gateway';
+			return 'https://ccore.spgateway.com/MPG/mpg_gateway';
 		}
 
-		return 'https://api.pay2go.com/MPG/mpg_gateway';
+		return 'https://core.spgateway.com/MPG/mpg_gateway';
 	}
 
 	/**

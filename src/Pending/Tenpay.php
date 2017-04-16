@@ -1,18 +1,18 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go\Feedback;
+namespace Windwalker\Spgateway\Pending;
 
 /**
- * An alias of VACC payment.
+ * The CVS payment.
  *
  * @since  {DEPLOY_VERSION}
  */
-class ATM extends VACC
+class Tenpay extends \Windwalker\Spgateway\Receiver\Tenpay
 {
 }

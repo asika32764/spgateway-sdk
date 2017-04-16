@@ -1,19 +1,22 @@
 {
-    "name": "windwalker/pay2go",
-    "type": "windwalker-external-package",
-    "description": "The PHP Pay2Go package",
-    "keywords": ["windwalker", "pay2go", "payment"],
-    "homepage": "https://github.com/ventoviro/pay2go",
-    "license": "LGPL-2.0+",
+    "name": "asika/spgateway",
+    "type": "spgateway-3rd-party-sdk",
+    "description": "The PHP Spgateway package",
+    "keywords": ["sdk", "spgateway", "payment"],
+    "homepage": "https://github.com/asika32764/spgateway",
+    "license": "MIT",
     "require": {
         "php": ">=5.3.10"
     },
     "require-dev": {
     },
+    "suggest": {
+        "windwalker/renderer": "Install 3.x to support template render."
+    },
     "minimum-stability": "beta",
     "autoload": {
         "psr-4": {
-            "Windwalker\\Pay2Go\\": "src/"
+            "Windwalker\\Spgateway\\": "src/"
         }
     }
 }

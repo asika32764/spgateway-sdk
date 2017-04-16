@@ -1,23 +1,22 @@
 <?php
 /**
- * Part of asukademy project.
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-use Windwalker\Pay2Go\Barcode\BarcodeHelper;
-use Windwalker\Pay2Go\Feedback\Barcode;
-use Windwalker\Pay2Go\FeedbackReceiver;
+use Windwalker\Spgateway\Barcode\BarcodeHelper;
+use Windwalker\Spgateway\Pending\Barcode;
+use Windwalker\Spgateway\PendingReceiver;
 use Windwalker\Renderer\AbstractRenderer;
 
 /**
- * @var  AbstractRenderer     $this
- * @var  FeedbackReceiver $feedback
- * @var  Barcode              $payment
+ * @var  AbstractRenderer $this
+ * @var  PendingReceiver  $pending
+ * @var  Barcode          $payment
  */
-$feedback = $data->feedback;
-$payment  = $data->feedback->payment;
+$payment  = $pending->payment;
 ?>
 <!DOCTYPE html>
 <html>
@@ -124,8 +123,8 @@ $payment  = $data->feedback->payment;
 
 <div class="mobile">
 	<div>
-		<a href="<?php echo $data->site_url ? : '#' ?>" style="margin-top:30px">
-			<img id="logo" src="<?php echo $data->logo_img ?>" style="max-width: 100%;">
+		<a href="<?php echo $site_url ? : '#' ?>" style="margin-top:30px">
+			<img id="logo" src="<?php echo $logo_img ?>" style="max-width: 100%;">
 		</a>
 	</div>
 	<h3 style="margin-top:10px; text-align: center">條碼繳費</h3>
@@ -141,10 +140,10 @@ $payment  = $data->feedback->payment;
 		</p>
 	</div>
 	<div style="margin-top: 20px; ">
-		<?php echo $this->load('feedback.barcode', array('table_class' => 'table full-table')); ?>
+		<?php echo $this->load('pending.barcode', array('table_class' => 'table full-table')); ?>
 	</div>
 	<div id="order_data" style="margin-top: 20px; margin-bottom: 10px;display: none">
-		<?php $this->load('feedback.barcode'); ?>
+		<?php $this->load('pending.barcode'); ?>
 	</div>
 </div>
 
@@ -158,14 +157,14 @@ $payment  = $data->feedback->payment;
 	<div id="print_here" style="width: 795px; margin: 0 auto;">
 		<div class="print_area" id="block" style=" margin-top: 10px; ">
 			<div style="text-align: center">
-				<img src="<?php echo $data->logo_img ?>" style="max-height: 80px; max-width: 300px;">
+				<img src="<?php echo $logo_img ?>" style="max-height: 80px; max-width: 300px;">
 			</div>
 			<div class="main_title" style="text-align:center">
 				<h1>條碼繳款單</h1>
 				<h4>(四大超商、農漁會通路 皆可代收款項)</h4>
 			</div>
 			<div class="second_title" style="text-align:right; margin-top:5px">
-				<h3>付款截止日： <?php echo $feedback->getExpireDate(); ?></h3>
+				<h3>付款截止日： <?php echo $pending->getExpireDate(); ?></h3>
 			</div>
 			<!---第一排開始-->
 			<div class="table_content" style="margin-top: 10px;">
@@ -183,13 +182,13 @@ $payment  = $data->feedback->payment;
 
 						<tr>
 							<td align="left">
-								<div>商店代號： <?php echo $this->escape($feedback->getMerchantID()); ?></div>
-								<div>商店中文名稱： <?php echo $this->escape($feedback->getMerchantName()); ?></div>
-								<div>商店訂單編號： <?php echo $this->escape($feedback->getMerchantOrderNo()); ?></div>
-								<div>交易序號： <?php echo $this->escape($feedback->getTradeNo()); ?></div>
+								<div>商店代號： <?php echo $this->escape($pending->getMerchantID()); ?></div>
+								<div>商店中文名稱： <?php echo $this->escape($pending->getMerchantName()); ?></div>
+								<div>商店訂單編號： <?php echo $this->escape($pending->getMerchantOrderNo()); ?></div>
+								<div>交易序號： <?php echo $this->escape($pending->getTradeNo()); ?></div>
 							</td>
 							<td align="center">
-								NT$ <?php echo number_format($feedback->getAmt(), 0) ?>
+								NT$ <?php echo number_format($pending->getAmt(), 0) ?>
 							</td>
 							<td align="center" style="width:230px">
 
@@ -246,17 +245,17 @@ $payment  = $data->feedback->payment;
 								<table style="width: 100%">
 									<tbody>
 									<tr>
-										<td width="50%">商店中文名稱： <?php echo $feedback->getMerchantName(); ?></td>
-										<?php if ($data->service_tel): ?>
+										<td width="50%">商店中文名稱： <?php echo $pending->getMerchantName(); ?></td>
+										<?php if ($service_tel): ?>
 										<td width="50%">
-											商店客服電話： <?php echo $data->service_tel; ?>
+											商店客服電話： <?php echo $service_tel; ?>
 										</td>
 										<?php endif; ?>
 									</tr>
-									<?php if ($data->service_email): ?>
+									<?php if ($service_email): ?>
 									<tr>
 										<td colspan="2">
-											商店客服信箱： <?php echo $data->service_email; ?>
+											商店客服信箱： <?php echo $service_email; ?>
 										</td>
 									</tr>
 									<?php endif; ?>
@@ -330,7 +329,7 @@ $payment  = $data->feedback->payment;
 
 						<tr>
 							<td align="left">
-								總收款金額：新臺幣 <?php echo number_format($feedback->getAmt(), 0) ?> 元
+								總收款金額：新臺幣 <?php echo number_format($pending->getAmt(), 0) ?> 元
 							</td>
 							<td rowspan="2">
 								<!-- 用印空間 -->
@@ -356,10 +355,10 @@ $payment  = $data->feedback->payment;
 			</div>
 			<div style="margin-left:10px;">
 				<div style="float: left">
-					<?php echo $data->site_url; ?>
+					<?php echo $site_url; ?>
 				</div>
 				<div style="float: right">
-					<?php echo $data->copyright; ?>
+					<?php echo $copyright; ?>
 				</div>
 			</div>
 		</div>

@@ -1,14 +1,14 @@
 <?php
 /**
- * Part of asukademy project. 
+ * Part of spgateway project.
  *
  * @copyright  Copyright (C) 2015 {ORGANIZATION}. All rights reserved.
  * @license    GNU General Public License version 2 or later;
  */
 
-namespace Windwalker\Pay2Go;
+namespace Windwalker\Spgateway;
 
-use Windwalker\Pay2Go\Renderer\RendererHelper;
+use Windwalker\Spgateway\Renderer\RendererHelper;
 use Windwalker\Renderer\PhpRenderer;
 
 /**
@@ -16,7 +16,7 @@ use Windwalker\Renderer\PhpRenderer;
  * 
  * @since  {DEPLOY_VERSION}
  */
-abstract class Pay2GoHelper
+abstract class SpgatewayHelper
 {
 	/**
 	 * Property languages.
