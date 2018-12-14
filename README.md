@@ -1,4 +1,4 @@
-# A Spgateway PHP Package
+# A Spgateway PHP Package (智富通)
 
 Beta 中，因開發倉促，有錯誤請回報，或者發 PR 協助修改。
 
