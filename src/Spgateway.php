@@ -298,10 +298,10 @@ SCRTPT;
 	{
 		if ($this->test)
 		{
-			return 'https://ccore.spgateway.com/MPG/mpg_gateway';
+			return 'https://ccore.newebpay.com/MPG/mpg_gateway';
 		}
 
-		return 'https://core.spgateway.com/MPG/mpg_gateway';
+		return 'https://core.newebpay.com/MPG/mpg_gateway';
 	}
 
 	/**
